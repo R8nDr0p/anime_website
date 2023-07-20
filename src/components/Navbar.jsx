@@ -19,6 +19,10 @@ function Navbar() {
       name: "Contact",
       path: "/contact",
     },
+    {
+      name: "Filter",
+      path: "/filter",
+    },
   ];
 
   const [show, setShow] = useState(true);
