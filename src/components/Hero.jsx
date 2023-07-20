@@ -1,17 +1,14 @@
 import React from "react";
+import "./hero.css";
 
 function Hero() {
   return (
     <section>
-      <div className="container mx-auto my-8">
-        <div className="row">
-          <div className="col">
-            <h2 className="text-center text-4xl font-[poppins]">
-              "Where Anime Dreams Come to Life: <br /> Your Ultimate Destination
-              for All Things Anime!"
-            </h2>
-          </div>
-        </div>
+      <div className="bg-container py-[8rem] bg-right sm:bg-right-top">
+        <h2 className="text-3xl text-center text-white">
+          "Where Anime Dreams Come to Life: <br /> Your Ultimate Destination for
+          All Things Anime!"
+        </h2>
       </div>
     </section>
   );
