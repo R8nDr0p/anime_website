@@ -55,7 +55,7 @@ function Navbar() {
                 <NavLink
                   to={`${tag.path}`}
                   key={index}
-                  className="text-white hover:underline no-underline transition-all duration-500 cursor-pointer"
+                  className="text-white hover:underline no-underline transition-all duration-500 cursor-pointer text-lg"
                 >
                   {tag.name}
                 </NavLink>
