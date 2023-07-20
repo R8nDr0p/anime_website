@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import navLogo from "../assets/logo.svg";
 import "./navbar.css";
 import { NavLink } from "react-router-dom";
+import { BiSearchAlt } from "react-icons/bi";
+import { FaCircleXmark, FaBarsStaggered } from "react-icons/fa6";
 
 function Navbar() {
   const tags = [
@@ -18,6 +20,8 @@ function Navbar() {
       path: "/contact",
     },
   ];
+
+  const [show, setShow] = useState(true);
   return (
     <nav className="bg-neutral-900">
       <div className="container mx-auto">
@@ -32,7 +36,18 @@ function Navbar() {
             </a>
             <h1 className="text-white">Anime Hub</h1>
           </div>
-          <div className="col text-white">
+          {/* web view */}
+          <div className="col w-96 sm:flex hidden space-x-1">
+            <input
+              type="text"
+              placeholder="Search here:"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+            <button className="border rounded py-2 px-3 ">
+              <BiSearchAlt className="text-white text-xl" />
+            </button>
+          </div>
+          <div className="col text-white sm:block hidden">
             <ul className="flex space-x-4">
               {tags.map((tag, index) => (
                 <NavLink
@@ -45,6 +60,35 @@ function Navbar() {
               ))}
             </ul>
           </div>
+          {/* mobile view */}
+          <div className="col sm:hidden flex items-center">
+            <button
+              onClick={() => {
+                setShow(!show);
+              }}
+            >
+              {show ? (
+                <FaCircleXmark className="text-white text-2xl me-2" />
+              ) : (
+                <FaBarsStaggered className="text-white text-2xl me-2" />
+              )}
+            </button>
+          </div>
+          {show && (
+            <div className="mobile sm:hidden absolute top-12 w-full">
+              <ul className="flex flex-col space-y-4 bg-neutral-900 text-white p-4">
+                {tags.map((tag, index) => (
+                  <NavLink
+                    to={`${tag.path}`}
+                    key={index}
+                    className="text-white text-center hover:underline no-underline transition-all duration-500 cursor-pointer"
+                  >
+                    {tag.name}
+                  </NavLink>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </nav>

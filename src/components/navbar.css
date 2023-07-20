@@ -10,3 +10,13 @@ nav ul a.active{
     border-radius: 5px;
     text-decoration: underline;
 }
+nav div.mobile ul a.active{
+    color: red; 
+    background-color: #444444;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 5px;
+    text-decoration: underline;
+}
