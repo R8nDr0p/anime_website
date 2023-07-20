@@ -1,0 +1,12 @@
+*{
+    font-family: "Comic Neue", cursive;
+}
+
+nav ul a.active{
+    color: red; 
+    background-color: #444444;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 5px;
+    text-decoration: underline;
+}
