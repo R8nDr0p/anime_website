@@ -34,7 +34,9 @@ function Navbar() {
                 className="h-[50px] bg-white"
               />
             </a>
-            <h1 className="text-white">Anime Hub</h1>
+            <h1 className="text-white">
+              Anime <span className="text-red-600">Hub</span>
+            </h1>
           </div>
           {/* web view */}
           <div className="col w-96 sm:flex hidden space-x-1">
@@ -61,7 +63,7 @@ function Navbar() {
             </ul>
           </div>
           {/* mobile view */}
-          <div className="col sm:hidden flex items-center">
+          <div className="col sm:hidden flex items-center relative">
             <button
               onClick={() => {
                 setShow(!show);
@@ -75,7 +77,7 @@ function Navbar() {
             </button>
           </div>
           {show && (
-            <div className="mobile sm:hidden absolute top-12 w-full">
+            <div className="mobile sm:hidden absolute top-12 w-full z-20">
               <ul className="flex flex-col space-y-4 bg-neutral-900 text-white p-4">
                 {tags.map((tag, index) => (
                   <NavLink
