@@ -1,16 +1,21 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Popular from "./components/Popular";
+import Navbar from "./components/Navbar";
+import About from "./pages/About";
+import Contacts from "./pages/Contacts";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div className="container mx-auto text-center text-3xl font-bold underline">
-        Hello World
-      </div>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Popular />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contacts />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
