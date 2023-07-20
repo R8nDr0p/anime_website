@@ -78,7 +78,7 @@ function Navbar() {
           </div>
           {show && (
             <div className="mobile sm:hidden absolute top-[5rem] w-full z-20">
-              <ul className="flex flex-col space-y-4 bg-neutral-900 text-white p-4">
+              <ul className="flex flex-col space-y-4 bg-neutral-800 text-white p-4">
                 {tags.map((tag, index) => (
                   <NavLink
                     to={`${tag.path}`}
@@ -89,6 +89,18 @@ function Navbar() {
                   </NavLink>
                 ))}
               </ul>
+              <div className="row bg-neutral-800">
+                <div className="col flex items-center justify-center pb-4">
+                  <input
+                    type="text"
+                    placeholder="Search here:"
+                    className="shadow appearance-none border rounded w-[5.5rem] md:w-full focus:w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline transition-all duration-1000"
+                  />
+                  <button className="border rounded py-2 px-3 ">
+                    <BiSearchAlt className="text-white text-xl" />
+                  </button>
+                </div>
+              </div>
             </div>
           )}
         </div>
