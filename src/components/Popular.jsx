@@ -48,6 +48,8 @@ function Popular() {
                 synopsis={anime.synopsis}
                 image={anime.images.jpg.large_image_url}
                 loading={loading}
+                aired={anime.aired.string}
+                genres={anime.genres}
               />
             );
           })}

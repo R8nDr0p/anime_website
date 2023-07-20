@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function Card({ loading, title, synopsis, image }) {
+function Card({ loading, title, synopsis, image, aired, genres }) {
   return (
     <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
@@ -38,12 +38,27 @@ function Card({ loading, title, synopsis, image }) {
             {title}
           </h5>
         </a>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 truncate">
+        <p className=" font-normal text-gray-700 dark:text-gray-400 truncate">
           {synopsis}
+        </p>
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 truncate">
+          {aired}
+        </p>
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 truncate">
+          {genres.map((genre, index) => {
+            return (
+              <span
+                key={index}
+                className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mr-2"
+              >
+                {genre.name}
+              </span>
+            );
+          })}
         </p>
         <a
           href="#"
-          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
         >
           Read more
         </a>
