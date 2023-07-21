@@ -33,14 +33,16 @@ function Popular() {
         <div className="text-center">
           <h3 className="text-4xl mb-4 text-white">Popular Anime</h3>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {loading ? (
+        {loading ? (
+          <div className="flex justify-center">
             <img
               src="https://gifdb.com/images/high/wide-mouth-anime-girl-ct08b2zx2bsp84eg.gif"
               alt=""
             />
-          ) : (
-            popularAnime.map((anime, index) => (
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {popularAnime.map((anime, index) => (
               <Card
                 key={index}
                 title={anime.title}
@@ -49,9 +51,9 @@ function Popular() {
                 aired={anime.aired.string}
                 genres={anime.genres}
               />
-            ))
-          )}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
