@@ -34,8 +34,9 @@ function Popular() {
           <h3 className="text-4xl mb-4 text-white">Popular Anime</h3>
         </div>
         {loading ? (
-          <div className="flex justify-center">
+          <div className="h-screen flex justify-center">
             <img
+              className="h-96 w-96"
               src="https://gifdb.com/images/high/wide-mouth-anime-girl-ct08b2zx2bsp84eg.gif"
               alt=""
             />
@@ -50,6 +51,7 @@ function Popular() {
                 image={anime.images.jpg.large_image_url}
                 aired={anime.aired.string}
                 genres={anime.genres}
+                id={anime.mal_id}
               />
             ))}
           </div>

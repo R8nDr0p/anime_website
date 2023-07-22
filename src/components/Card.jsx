@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Card({ title, synopsis, image, aired, genres }) {
+function Card({ title, synopsis, image, aired, genres, id }) {
+  const [animeID, setAnimeID] = useState("");
   return (
     <div className="max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <div className="flex justify-center">
@@ -27,6 +28,9 @@ function Card({ title, synopsis, image, aired, genres }) {
           ))}
         </p>
         <button
+          onClick={() => {
+            setAnimeID(id);
+          }}
           href="#"
           className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
         >
