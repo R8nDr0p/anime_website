@@ -35,7 +35,7 @@ function Navbar() {
               <img
                 src={navLogo}
                 alt="logo of the website"
-                className="max-h-20 bg-white"
+                className="max-h-16 bg-white"
               />
               <h1 className="text-white text-3xl">
                 Anime <span className="text-red-600">Hub</span>
