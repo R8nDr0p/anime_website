@@ -1,9 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function Card({ title, synopsis, image, aired, genres, id }) {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
-    <div className="max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div
+      data-aos="flip-left"
+      data-aos-duration="250"
+      className="max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+    >
       <div className="flex justify-center">
         <img className="rounded-t-lg mt-3 w-full" src={image} alt="" />
       </div>
