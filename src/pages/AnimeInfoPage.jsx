@@ -26,6 +26,7 @@ function AnimeInfoPage() {
         console.log("result", result.data.data);
         setAnimeDetails(result.data.data);
         setLoading(false);
+        window.scrollTo(0, 0);
       })
       .catch((error) => console.log("error", error));
   }, []);
@@ -66,6 +67,27 @@ function AnimeInfoPage() {
                   {info.key}: {info.value}
                 </p>
               ))}
+            </div>
+          </div>
+          <div className="row mt-5">
+            <div className="col">
+              {animeDetails.trailer?.embed_url == null ? (
+                <h1 className="dark:text-white text-black text-xl text-center">
+                  Sorry, there is no trailer for this anime. Please check back
+                  later.
+                </h1>
+              ) : (
+                <div>
+                  <iframe
+                    src={`https://www.youtube.com/embed//${animeDetails.trailer.youtube_id}?enablejsapi=1&wmode=opaque&autoplay=0`}
+                    // src={animeDetails.trailer.embed_url}
+                    width="100%"
+                    allowFullScreen
+                    title="trailer"
+                    className="h-96 rounded"
+                  ></iframe>
+                </div>
+              )}
             </div>
           </div>
         </div>
